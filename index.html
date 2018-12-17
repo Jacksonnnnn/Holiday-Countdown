@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<style>
+			* {
+				color: #c0547a;
+			}
+			.html {
+				margin: auto;
+				max-width: 900px;
+				border-radius: 15px;
+				background-color: rgba(255, 255, 255, 0.8);
+			}
+			body {
+				background-image: url("holiday wallpaper.png");
+				font-family: Roboto, sans-serif;
+			}
+			.countdown {
+				width: 50%;
+				margin: 0 auto;
+			}
+			p#countdown {
+			  	text-align: center;
+			  	font-size: 60px;
+			  	margin: 0 auto;
+				background-color: rgba(70, 206, 158, 0.50);
+				border-radius: 20px;
+				width: 100%;
+			}
+			p#days, p#hours, p#minutes, p#seconds {
+				font-size: 36px;
+				color: white !important;
+				margin: auto;
+				display: inline-block !important;
+			}
+			h1, h2 {
+				text-align: center;
+			}
+			div.main {
+				height: auto;
+				width: 65%;
+				margin: 0 auto;
+			}
+			div.heading {
+				padding-top: 20px;
+			}
+			p {
+				font-size: 24px;
+			}
+			p.subtext {
+				font-size: 16px !important;
+				text-align: center;
+			}
+			.border {
+				display: inline-block;
+				background-color: #3fab85;
+				border-radius: 15%;
+				opacity: 0.6;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="html">
+			<div class="heading">
+				<h1>How Many Days Until Christmas?</h1>
+			</div>
+			<div class="main">
+				<div class="countdown">
+					<p id="countdown">
+						<div class="border">
+							<p id="days"></p>
+						</div>
+						<div class="border">
+							<p id="hours"></p>
+						</div>
+						<div class="border">
+							<p id="minutes"></p>
+						</div>
+						<div class="border">
+							<p id="seconds"></p>
+						</div>
+					</p>
+				</div>
+				<p class="subtext">Time until Christmas (December 25th, 2018)</p>
+				<p>Whether you are a grinch or scrooge, or even if you love the holiday season, Christmas time is a time of celebration and giving back. During the holiday, you give presents to other people while you also gain presents. This season is the season of eating food and being with friends and family.</p>
+				<p>My favorite Christmas song is White Christmas by the Drifters on their "Bells of St. Mary's [Digital 45]" album and my favorite Christmas memory has to be last year's Christmas because we closed on our new house on the 19th and moved in on the 20th-- 5 days before Christmas with 8 people coming.</p>
+				
+				<!--
+
+					COUNTDOWN SCRIPT
+
+				-->
+				<script>
+				// Set the date we're counting down to
+				var countDownDate = new Date("Dec 25, 2018 00:08:00").getTime();
+
+				// Update the count down every 1 second
+				var x = setInterval(function() {
+
+					// Get todays date and time
+					var now = new Date().getTime();
+
+					// Find the distance between now and the count down date
+					var distance = countDownDate - now;
+
+					// Time calculations for days, hours, minutes and seconds
+					var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+					var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+					var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+					var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+					// Output the result in an element with id="demo"
+					
+					//document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+					document.getElementById("days").innerHTML = days + "d ";
+					document.getElementById("hours").innerHTML = hours + "h ";
+					document.getElementById("minutes").innerHTML = minutes + "m ";
+					document.getElementById("seconds").innerHTML = seconds + "s ";
+
+					
+					// If the count down is over, write some text 
+					if (distance < 0) {
+						clearInterval(x);
+						document.getElementById("countdown").innerHTML = "CHRISTMAS ALREADY HAPPENED!";
+					}
+				}, 1000);
+				</script>
+			</div>
+			<footer>
+				<p class="subtext madeby">Jackson Huse</p>	
+			</footer>
+		</div>
+	</body>
+</html>
